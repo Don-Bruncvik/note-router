@@ -1,0 +1,18 @@
+{
+  "name": "triedic",
+  "version": "0.1.0",
+  "description": "Obsidian plugin: moves new notes from the vault root into folders by how their title starts.",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "build": "tsc --noEmit --skipLibCheck && node esbuild.config.mjs",
+    "test": "vitest run"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "obsidian": "^1.13.1",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
+  }
+}

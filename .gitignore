@@ -1,0 +1,9 @@
+node_modules/
+/main.js
+.DS_Store
+test-vault/*
+!test-vault/.obsidian/
+test-vault/.obsidian/*
+!test-vault/.obsidian/community-plugins.json
+!test-vault/Vitaj.md
+NÁVOD.md
