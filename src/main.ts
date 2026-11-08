@@ -24,11 +24,11 @@ interface Settings {
 const DEFAULTS: Settings = { quietSeconds: 300 };
 // Automatika je nastavenie zariadenia (localStorage), nie vaultu: dá sa zapnúť len na jednom zariadení.
 // Predvolene zapnuté na každom zariadení (Mac, iPhone, iPad); dá sa vypnúť pre jedno zariadenie.
-const AUTO_KEY = "triedic-auto";
+const AUTO_KEY = "note-router-auto";
 const TICK_MS = 60_000;
 const STARTUP_DELAY_MS = 30_000;
 
-export default class TriedicPlugin extends Plugin {
+export default class NoteRouterPlugin extends Plugin {
 	settings: Settings = { ...DEFAULTS };
 	private running = false;
 	private timer: number | null = null;
@@ -36,9 +36,9 @@ export default class TriedicPlugin extends Plugin {
 
 	async onload(): Promise<void> {
 		this.settings = { ...DEFAULTS, ...((await this.loadData()) as Partial<Settings> | null) };
-		this.addSettingTab(new TriedicSettingTab(this.app, this));
+		this.addSettingTab(new NoteRouterSettingTab(this.app, this));
 
-		this.addRibbonIcon("folder-input", "Triedič poznámok: náhľad", () => void this.openPreview());
+		this.addRibbonIcon("folder-input", "Note Router: náhľad triedenia", () => void this.openPreview());
 		this.addCommand({ id: "sort-now", name: "Roztrieď teraz", callback: () => void this.sort(true) });
 		this.addCommand({ id: "preview", name: "Náhľad: čo by sa kam presunulo", callback: () => void this.openPreview() });
 		this.addCommand({ id: "open-rules", name: "Otvoriť pravidlá", callback: () => void this.openNote(RULES_PATH) });
@@ -159,7 +159,7 @@ export default class TriedicPlugin extends Plugin {
 				}
 			}
 			await this.appendLog(lines);
-			if (manual) new Notice(moved ? `Triedič: presunuté ${moved}` : "Triedič: nič na presun");
+			if (manual) new Notice(moved ? `Note Router: presunuté ${moved}` : "Note Router: nič na presun");
 			return moved;
 		} finally {
 			this.running = false;
@@ -197,7 +197,7 @@ export default class TriedicPlugin extends Plugin {
 class PreviewModal extends Modal {
 	constructor(
 		app: App,
-		private plugin: TriedicPlugin,
+		private plugin: NoteRouterPlugin,
 		private decisions: Decision[],
 	) {
 		super(app);
@@ -254,10 +254,10 @@ class PreviewModal extends Modal {
 	}
 }
 
-class TriedicSettingTab extends PluginSettingTab {
+class NoteRouterSettingTab extends PluginSettingTab {
 	constructor(
 		app: App,
-		private plugin: TriedicPlugin,
+		private plugin: NoteRouterPlugin,
 	) {
 		super(app, plugin);
 	}

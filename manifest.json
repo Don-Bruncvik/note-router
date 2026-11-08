@@ -1,7 +1,7 @@
 {
-	"id": "triedic",
-	"name": "Triedič poznámok",
-	"version": "0.1.0",
+	"id": "note-router",
+	"name": "Note Router",
+	"version": "0.2.0",
 	"minAppVersion": "1.8.7",
 	"description": "Moves new notes from the vault root into folders by how their title starts. Rules and log are notes in _Triedenie. Offline, reads only file names.",
 	"author": "Don-Bruncvik",

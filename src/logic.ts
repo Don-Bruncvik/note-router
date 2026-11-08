@@ -1,5 +1,5 @@
 // Čistá logika triediča (bez Obsidianu), aby sa dala testovať.
-// Prenesené z ~/Documents/DEV/obsidian-triedic/triedic.py.
+// Prenesené z pôvodného Python skriptu triedic.py.
 
 export const FOLDER = "_Triedenie";
 export const RULES_PATH = `${FOLDER}/Pravidlá.md`;

@@ -1,6 +1,6 @@
 {
-  "name": "triedic",
-  "version": "0.1.0",
+  "name": "note-router",
+  "version": "0.2.0",
   "description": "Obsidian plugin: moves new notes from the vault root into folders by how their title starts.",
   "main": "main.js",
   "private": true,

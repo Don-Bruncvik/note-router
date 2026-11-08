@@ -1,9 +1,9 @@
-// Build: main.js + kópia do test-vault/.obsidian/plugins/triedic.
+// Build: main.js + kópia do test-vault/.obsidian/plugins/note-router.
 import esbuild from "esbuild";
 import fs from "node:fs";
 import path from "node:path";
 
-const VAULT_PLUGIN_DIR = "test-vault/.obsidian/plugins/triedic";
+const VAULT_PLUGIN_DIR = "test-vault/.obsidian/plugins/note-router";
 
 await esbuild.build({
   entryPoints: ["src/main.ts"],
@@ -19,4 +19,4 @@ await esbuild.build({
 
 fs.mkdirSync(VAULT_PLUGIN_DIR, { recursive: true });
 for (const f of ["main.js", "manifest.json"]) fs.copyFileSync(f, path.join(VAULT_PLUGIN_DIR, f));
-console.log(`[triedic] built -> ${VAULT_PLUGIN_DIR}`);
+console.log(`[note-router] built -> ${VAULT_PLUGIN_DIR}`);

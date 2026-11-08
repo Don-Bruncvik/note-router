@@ -1,4 +1,4 @@
-# Triedič poznámok
+# Note Router
 
 Plugin do Obsidianu: poznámku v koreni vaultu presunie do priečinka podľa začiatku nadpisu
 („KAM porada 9.11“ → `KAM/`). Bez AI, bez internetu, číta len mená súborov. Funguje na počítači aj v iPhone a iPade.
@@ -9,8 +9,8 @@ plain notes in `_Triedenie/`. Offline, reads file names only, desktop and mobile
 ## Inštalácia cez BRAT
 
 1. Community plugins → Browse → nainštaluj a zapni **BRAT**.
-2. BRAT → Add beta plugin → `https://github.com/Don-Bruncvik/triedic` → Add plugin.
-3. Community plugins → zapni **Triedič poznámok**.
+2. BRAT → Add beta plugin → `https://github.com/Don-Bruncvik/note-router` → Add plugin.
+3. Community plugins → zapni **Note Router**.
 
 ## Ako funguje
 
